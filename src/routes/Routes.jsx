@@ -3,11 +3,12 @@ import React from 'react'
 import PlanetList from '../containers/PlanetList'
 import PlanetPage from '../containers/PlanetPage'
 import ResidentPage from '../containers/ResidentPage'
-// import Header from '../components/Header'
+import Header from '../components/Header'
 
 const Routes = () => {
   return (
     <BrowserRouter>
+      <Header />
       <Switch>
         <Route exact path='/'>
           <PlanetList />
@@ -15,7 +16,7 @@ const Routes = () => {
         <Route path='/planet/:planetId'>
           <PlanetPage />
         </Route>
-        <Route path='/resident/:residentId'>
+        <Route path='/planet/:planetId/resident/:residentId'>
           <ResidentPage />
         </Route>
       </Switch>

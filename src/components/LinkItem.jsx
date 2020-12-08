@@ -1,15 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const LinkItem = ({item, destination, saveSelectedItemInState, children}) => {
+  const location = useLocation();
   const getPlanetIdFromUrl = planetUrl => {
-    debugger;
     return planetUrl.replace(/[^0-9]/g, "")
   }
 
+  const currentUrl = location.pathname === "/" ? "" : location.pathname
   return (
     <Link 
-      to={`${destination}${getPlanetIdFromUrl(item.url)}`}
+      to={`${currentUrl}${destination}${getPlanetIdFromUrl(item.url)}`}
       onClick={() => {
         saveSelectedItemInState(item)
       }}
