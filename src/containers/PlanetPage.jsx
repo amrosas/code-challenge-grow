@@ -5,6 +5,7 @@ import { Spin } from 'antd';
 import { loadPlanetData } from '../actions/filters';
 import { getDataFromUrl } from '../services/SWAPI';
 import ResidentItem from '../components/ResidentItem';
+import './PlanetPage.css';
 
 const PlanetPage = ({planet, onFirstLoad}) => {
   const { planetId } = useParams();

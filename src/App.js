@@ -1,9 +1,15 @@
 import 'antd/dist/antd.css';
+import { BrowserRouter } from 'react-router-dom';
 import Routes from './routes/Routes.jsx';
+import PageLayout from './components/PageLayout'
 
 function App() {
   return (
-    <Routes/>
+    <BrowserRouter>
+      <PageLayout>
+        <Routes/>
+      </PageLayout>
+    </BrowserRouter>
   );
 }
 

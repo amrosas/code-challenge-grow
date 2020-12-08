@@ -35,11 +35,6 @@ class FilterableGrid extends React.Component {
             pageSize: 10
           }}
           dataSource={filteredPlanets}
-          footer={
-            <div>
-              this is a footer
-              </div>
-          }
           renderItem={(item) => (
             <List.Item
               key={item.name}

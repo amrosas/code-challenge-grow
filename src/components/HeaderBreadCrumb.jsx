@@ -2,8 +2,9 @@ import React from 'react';
 
 import { Link, useLocation } from 'react-router-dom';
 import { Breadcrumb } from 'antd';
+import './HeaderBreadCrumb.css';
 
-const Header = () => {
+const HeaderBreadcrumb = () => {
 
   const location = useLocation();
 
@@ -25,8 +26,8 @@ const Header = () => {
       const url = `/${urls[0]}/${urls[1]}`
       const breadCrumbName = `${urls[0]} ${urls[1]}`
       return (
-        <Breadcrumb.Item key={url}>
-          <Link to={url}>{breadCrumbName}</Link>
+        <Breadcrumb.Item key={url} className="link">
+          <Link to={url} >{breadCrumbName}</Link>
         </Breadcrumb.Item>
       );
     })
@@ -34,14 +35,14 @@ const Header = () => {
   }
   
   const breadcrumbItems = [
-    <Breadcrumb.Item key="home">
-      <Link to="/">Home</Link>
+    <Breadcrumb.Item key="home" className="link">
+      <Link to="/"  >Home</Link>
     </Breadcrumb.Item>,
   ].concat(extraBreadcrumbitems);
 
   return (
-    <Breadcrumb>{breadcrumbItems}</Breadcrumb>
+    <Breadcrumb className="breadcrumb">{breadcrumbItems}</Breadcrumb>
   );
 };
 
-export default Header
+export default HeaderBreadcrumb
